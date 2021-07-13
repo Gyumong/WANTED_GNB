@@ -1,11 +1,12 @@
 /** @format */
 
 import styled from "styled-components";
-
+import { NavLink } from "react-router-dom";
 export const HeaderWrapper = styled.div`
   position: fixed;
   padding-right: initial;
   width: 100%;
+  top: 0;
   background-color: #fff;
   -webkit-box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
@@ -61,18 +62,23 @@ export const MenuList = styled.ul`
   }
 `;
 
-export const Menu = styled.li`
+export const Menu = styled(NavLink)`
   height: inherit;
   display: inline-block;
-  a {
-    padding: 14px 13px 19px 20px;
-    position: relative;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 600;
-    text-decoration: inherit;
-    cursor: pointer;
+  &.active {
+    box-shadow: inset 0 -2px #258bf7;
   }
+
+  padding: 14px 13px 19px 20px;
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: pre;
+  text-decoration: none;
+  color: inherit;
 `;
 
 export const SideMenu = styled.aside`
